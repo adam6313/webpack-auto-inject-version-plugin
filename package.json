@@ -1,0 +1,20 @@
+{
+  "name": "webpack-auto-inject-version-plugin",
+  "version": "1.0.0",
+  "description": "webpack-auto-inject-version-plugin",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack-auto-inject-version-plugin"
+  ],
+  "author": "adam",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "os": "^0.1.1",
+    "path": "^0.12.7",
+    "webpack-log": "^3.0.1"
+  }
+}

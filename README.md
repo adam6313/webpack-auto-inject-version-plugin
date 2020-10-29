@@ -1,0 +1,1 @@
+# webpack-auto-inject-version-plugin
