@@ -1,6 +1,6 @@
 {
   "name": "webpack-auto-inject-version-plugin",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "webpack-auto-inject-version-plugin",
   "main": "src/index.js",
   "scripts": {
