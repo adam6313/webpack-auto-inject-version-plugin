@@ -21,7 +21,7 @@ module.exports = class webpackAutoInjectVersionPlugin {
         return `[TYR] version: ${packageFile.version} - ${new Date().toISOString()}`
       }
 
-      return this.options.tag
+      return `${this.options.tag} - ${new Date().toISOString()}`
     }
 
     attachHeaderToAsset(filename, compilation) {
@@ -41,16 +41,14 @@ module.exports = class webpackAutoInjectVersionPlugin {
     handleCompilation(compilation, callback) {
       log.info(`Injecting header for ${config.extensions} files ...`);
       var self = this;
+      let count = 0;
       for (var filename in compilation.assets) {
-          let count = 0;
-          for (var filename in compilation.assets) {
-              self.attachHeaderToAsset(filename, compilation) && count++;
-          }
-          if (typeof callback === 'function') {
-              callback();
-          }
-          log.info(`${count} file(s) done`);
+        self.attachHeaderToAsset(filename, compilation) && count++;
       }
+      if (typeof callback === 'function') {
+        callback();
+      }
+      log.info(`${count} file(s) done`);
     }
 
     apply(compiler) {
